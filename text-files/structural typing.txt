@@ -1,0 +1,399 @@
+
+// // // interface Pet {
+// // //   name:string;
+// // // }
+
+
+// // // class Dog {
+
+// // //   name:string;
+
+// // //   constructor(name:string){
+// // //     this.name = name
+// // //   }
+// // // }
+
+// // // let pet:Pet;
+
+// // // pet = new Dog("maximus")
+
+
+// // // {
+// // // key:"value"
+// // // }
+
+// // //   function constructor(value:string|number){
+
+// // //     return {
+
+// // //       key:value
+// // //     }
+// // //   }
+
+// // //   console.log(constructor("shahab"));
+  
+
+// // ///structural compatability
+
+// // // interface Pet {
+
+// // //   name:string;
+
+// // // }
+
+// // // let pet:Pet = {name:"bob"};
+
+// // // let dog = {name:"maximus",age:2}
+
+// // // dog = pet
+// // // pet = dog
+
+
+// // interface Pet {
+
+// //   name:string;
+// // }
+
+
+// // // let dog = {name:"jack",age:5};
+
+
+// // // function greet(pet:Pet){
+
+// // //   return `Hello ${pet.name}`
+// // // }
+
+// // // console.log(greet(dog));
+
+
+// // function run(pet:{name:string}){
+
+// //   return ` hello ${pet.name}`
+// // }
+
+// // let janwar = {name:"cow",age:20,sound:"moo"}
+
+// // console.log(run({name:"cow"}));//ok
+
+// // let obj1 = {name:"shahab"}
+// // let obj2 = {name:"simra",age:22}
+
+// // obj2 = obj1
+
+// var x: { foo: number, [x: string]:any };
+// x = { foo: 1, baz: "hello" };  // Ok, `baz` matched by index signature
+
+// // interface Person  {
+
+// //   name:string;
+// //   age:number;
+// //   gender:string;
+// //   address?:any;
+// //   hobbies?:string[];
+// //   [apkiMarzi:string]:any;
+// // }
+
+
+// // let person:Person = {
+
+// //   name:"shahabuddin",
+// //   age:10,
+// //   gender:"male",
+// //   id:1234,
+// // }
+
+
+// // let number = [2,4,6]
+// //             //0 1 2
+
+
+// // function add(num1:number,...nums:number[]):number{
+
+   
+// //   let num2 = nums.reduce((acc,curr) => acc + curr)
+
+// //    return num1 + Math.floor(num2)
+
+// // }
+
+// // export function addition(num1:number,num2:number){
+
+
+// //   return num1 + num2;
+
+// // }
+
+
+// // let C = console.log;
+
+// // C(add(5,       2,4,6));
+
+
+
+// //  1 = current => acumulated
+
+// // 2 = > current => 2
+
+
+// //type compatibility
+
+// // interface Deal1 {
+
+// //   food:string;
+
+
+// // }
+
+
+// // interface Deal2 {
+
+// //   food:string;
+// //   coldDrink:boolean;
+
+
+// // }
+
+// // interface Person{
+
+// //   name:string
+// // }
+
+// // function greet(someone:Person){
+
+// //   return someone.name
+
+// // }
+
+// // let obj = {name:"mohsin",age:20}
+
+// // C(greet({name:"mohsin",age:20}))
+
+
+// // let yourOrder:Deal2 = {food:"biryani",coldDrink:false};
+// // let myOrder:Deal1 = {food:"biryani"};
+
+// // let order:Deal1 = yourOrder
+
+// // let kuchBhi:Deal2 = myOrder 
+
+
+
+
+
+
+// // interface PuzzlePiece {
+// //   shape: string;
+// //   size: number;
+// // }
+
+// // function fitPiece(piece: PuzzlePiece) {
+// //   console.log(`Fitting piece with shape ${piece.shape} and size ${piece.size}`);
+// // }
+
+// // let pieceA = { shape: 'square', size: 2 };
+// // let pieceB = { shape: 'square', size: 2 };
+
+// // // Both objects can be used in fitPiece because they have the same shape.
+// // fitPiece(pieceA); // Works fine
+// // fitPiece(pieceB); // Works fine
+
+
+// // Define an object with a 'quack' method
+// const Duck = {
+//   quack: function() {
+//     console.log('Quack!');
+//   }
+// };
+
+// // Define an object with a 'quack' method (same shape as duck)
+// const Turkey = {
+//   quack: function() {
+//     console.log('Gobble!');
+//   }
+// };
+
+// // Function that expects an object with a 'quack' method (duck typing)
+// function MakeItQuack(object:any) {
+//   object.quack();
+// }
+
+// // Pass the duck object to the function (works as expected)
+// MakeItQuack(Duck); // Output: Quack!
+
+// // Pass the turkey object to the function (works too, due to duck typing)
+// makeItQuack(Turkey); // Output: Gobble!
+
+
+// // In this example:
+
+// // - We define two objects, duck and turkey, both
+// // [6/16, 21:16] Meta AI: Here's a simple example of duck typing in JavaScript:
+
+
+// // Define an object with a 'quack' method
+// const duck = {
+//   quack: function() {
+//     console.log('Quack!');
+//   }
+// };
+
+// // Define an object with a 'quack' method (same shape as duck)
+// const turkey = {
+//   quack: function() {
+//     console.log('Gobble!');
+//   }
+// };
+
+// // Function that expects an object with a 'quack' method (duck typing)
+// function makeItQuack(obj:any) {
+//   obj.quack();
+// }
+
+// // Pass the duck object to the function (works as expected)
+// makeItQuack(duck); // Output: Quack!
+
+// // Pass the turkey object to the function (works too, due to duck typing)
+// makeItQuack(turkey); // Output: Gobble!
+
+
+// // In this example:
+
+// // - We define two objects, duck and turkey, both with a quack method.
+// // - We define a function makeItQuack that expects an object with a quack method (duck typing).
+// // - We pass both duck and turkey objects to the function, and it works as expected, even though they are different objects.
+
+// // This demonstrates how duck typing in JavaScript allows us to treat objects with the same shape (methods and properties) as if they were of the same type, without explicit type definitions.
+
+
+
+
+//Arthmetic Operators
+
+//  + plus
+//  - Minus
+//  / divide
+//  * Multiply
+//  % Modulus
+
+// console.log(4+6);
+// console.log(4/2);
+// console.log(5%2);
+// console.log(10 - 5);
+// console.log(5*4); 
+// console.log(++5); //pre increment
+// console.log(5++); //post increment
+// console.log(--5); //pre decrement
+// console.log(5--); //post decrement
+//exponential **
+
+//logical operators
+
+// &&  logical "AND"  operator // both values should be true to run the code
+// ||  logical OR operator  // one value or both needs to be true , to run the code
+// XOR // Exclusive OR =if both values are true it returns false, if both values are false, it return true
+
+///Comparision operator
+
+// less  < 
+// greater  >
+// greater and equal >=
+// less and equal <=
+// checks value and type ===
+// checks value ==
+// not equal !=
+// not equal but strict !== 
+
+//Example
+
+//loop from 1 to 10
+//if num === odd => "Eid mubarak"
+//if number === even => "Khair mubarak" 
+
+// for(let number = 0; number <= 10; number++){
+
+//   if(number % 2 === 0){
+//     console.log("Eid mubarak");
+    
+//   }else{
+//     console.log("Khair mubarak");
+    
+//   }
+
+//
+
+///create a clock which greets you according to the time you give it
+
+// 1 //AM
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
+// 11
+// 12 //AM
+
+// 13 = 1 //pm
+// 14 = 2//pm
+// 15 =3
+// 16 = 4
+// 17 = 5
+// 18 = 6
+// 19 = 7
+// 20 = 8
+// 21 = 9
+// 22 = 10 
+// 23 = 11
+// 24 = 12//pm
+ 
+
+
+
+
+// let time:number  = 1; // good night
+
+// if(time >= 22  || time <= 4){
+
+//   console.log("Good Night");
+  
+// }else if(time >=5 && time <= 12){
+//   console.log("Good morning");
+  
+// }else if(time >= 13 && time <= 17){
+
+//   console.log("Good Afternoon");
+  
+// }else if(time >= 18 && time <= 21){
+//   console.log("Good Evening");
+  
+// }
+
+// Celsius to Fahrenheit: F=C×59​+32
+
+// Fahrenheit to Celsius: C=(F−32)×95​
+
+/// celcsius to fahrenheit converter and viseversa
+
+let celcsius:number = 30;
+let fahrenheit:number = 100;
+
+function convertToFahrenheit(celcsius:number){
+
+  let fahrenheight = celcsius * 9/5 +32
+
+  return fahrenheight.toFixed(2);
+}
+
+console.log(convertToFahrenheit(30));
+
+
+function convertToCelsius(fahrenheight:number){
+
+  let celcsius =  (fahrenheight-32)* 5/9
+  return celcsius.toFixed(2);
+}
+
+console.log(convertToCelsius(100));

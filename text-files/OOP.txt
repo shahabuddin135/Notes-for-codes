@@ -1,0 +1,281 @@
+import chalk from "chalk"
+
+///abstraction
+
+ interface NaniRecipe {
+
+    recipe:{
+        name:string,
+        ingredients:string[]
+    }
+ }
+
+ type Recipe = {name:string,ingredients:string[]} ;
+
+abstract class Nani implements NaniRecipe {
+
+    recipe:{
+        name:string
+        ingredients:string[]
+    }
+
+    constructor(recipe:Recipe){
+        this.recipe = recipe;
+    }
+
+   showinfo (){
+
+       console.log(chalk.greenBright(`\nRecipe name: ${this.recipe.name}\n`));
+
+    for(let ingredient of this.recipe.ingredients){
+
+        console.log(chalk.blueBright(`Ingredient:`),chalk.yellowBright(` ${ingredient}`));
+    }
+        
+    }
+}
+
+class Child extends Nani {
+
+   constructor(recipe:Recipe){
+
+       super(recipe)
+       this.recipe = recipe
+
+   }
+
+   show(){
+    console.log("\nNani's Recipe\n");
+    
+    this.showinfo()
+   }
+
+
+}
+
+let dish = new Child({name:"NIHARI",ingredients:["masale","mirch","Meat","pani","namak"]});
+    
+
+dish.show()
+
+
+////////////////
+OOP start
+/////////////
+
+//OOP (Object Oriented Programing)
+
+//pillars of OOP  (Object Oriented Programing)
+
+//abrstraction
+//inheritance
+//polymorphism
+//encapsulation
+
+
+//paradigm
+
+//the way of writing your code
+
+//functional programming => function
+
+//object oriented programming => OBJECTS
+
+//let value ;
+
+
+// let person2 = {
+
+//     name:"Mohsin",
+//     age:40,
+//     showInfo: function(){
+
+//         this.name
+//     }
+// }
+
+// let person3 = {
+
+//     name:"Hina",
+//     age:55
+
+
+// }
+
+//object oriented programming
+
+class Person {
+
+    NAME:string
+    AGE:number
+
+    constructor(name:string,age:number){
+
+        this.NAME = name
+        this.AGE = age
+    }
+
+    showInfo(){
+        console.log(this.NAME,this.AGE);
+        
+    }
+
+}
+
+let person1 = new Person("Shahab",20);
+
+let person3 = new Person("Uzma",70);
+
+person1.showInfo();
+person3.showInfo();
+
+
+
+///first one functional programming
+
+function makeObject(obj:{name:string,age:number}){
+
+    let object = {
+
+        name:obj.name,
+        age:obj.age,
+
+        showInfo:function(){
+
+            console.log(this.name,this.age);
+            
+        }
+    }
+
+    return object;
+}
+
+let person2 = makeObject({name:"Mohsin",age:40})
+
+let person4 = makeObject({name:"Haroon",age:24})
+
+person2.showInfo();
+person4.showInfo();
+
+//console.log(person2.name,person2.age);
+
+
+////////////
+abstract
+///////////
+
+
+
+//Abstraction
+
+abstract class vehicle {
+
+  name:string
+  model:number
+
+  constructor(name:string,model:number){
+
+    this.name = name
+    this.model = model
+
+  }
+
+  showInfo(){
+    console.log(this.name);
+    console.log(this.model);
+    
+  }
+
+}
+
+class Car extends vehicle {
+
+  constructor(name:string,model:number){
+
+    super(name,model)
+
+  }
+
+  showInfo(): void {
+
+    super.showInfo();
+    
+  }
+  
+
+}
+
+// let car1 = new Car("mercedes",2022);
+
+// car1.showInfo();
+
+import chalk from "chalk";
+
+type Recipe = {
+
+  name:string
+  ingredients: string[]
+
+}
+
+interface NaniRecipe {
+
+  recipe:Recipe
+  show:() => void
+
+}
+
+abstract class Nani implements NaniRecipe {
+
+  recipe:Recipe
+
+  constructor(recipe:Recipe){
+
+    this.recipe = recipe
+  }
+
+  show(){
+    
+    for(let ingredient of this.recipe.ingredients){
+
+      console.log(chalk.greenBright(`Ingredient: `, chalk.yellow(`${ingredient}`)));
+      
+    }
+  }
+
+}
+
+
+class Child extends Nani {
+
+  constructor(recipe:Recipe){
+
+    super(recipe)
+  }
+
+  show(){
+    console.log(chalk.magentaBright(`\nRecipe name: `, chalk.yellow(`${this.recipe.name}\n`)));
+    
+    super.show()
+  }
+}
+
+// let dish1 = {
+
+//   name:"briyani",
+//   ingredients:["chicken","garam masala","rice","Water"]
+// }
+
+
+
+let dishes = [
+  new Child({name:"briyani",ingredients:["chicken","garam masala","rice","Water"]}),
+  new Child({name:"Nihari",ingredients:["beef","garam masala","flour","Water"]})
+]
+
+for(let dish of dishes){
+
+  dish.show();
+}
+
+

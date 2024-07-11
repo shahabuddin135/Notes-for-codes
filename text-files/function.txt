@@ -1,0 +1,666 @@
+//loops
+
+
+
+//for loop
+
+// ( variable initialisation ; condition ; increment or decrement     )
+
+// for(let count = 0; count <= 100; count ++ ){
+
+//  console.log(count);
+ 
+//    //count 0 + 1 = 1
+//    //count 1 + 1 = 2
+//    //count 2 + 1 = 3
+//    //count 3 + 1 = 4
+   
+//    //count 9 + 1 = 10 
+
+// }
+
+
+// let array = ["apple","banana","orange","mango"]
+
+// //variable initialize     count < 4  condition    increment
+// for(let fruit = 0;     fruit < array.length;      fruit ++ ){
+
+//    console.log(array[fruit]);
+   
+// }
+
+
+
+
+//for of loop  (access the values of an array)
+
+// let array = ["apple","banana","orange","mango"];
+
+// for(let fruit of array){
+
+//    console.log(`i love ${fruit}`);
+   
+// }
+
+
+
+//for in loop
+   //           0       1        2        3
+// let array = ["apple","banana","orange","mango"];
+
+// for(let Index in array){
+
+//    console.log(`I love ${array[Index]}`); //(we create multi line strings using back ticks)
+   
+// }
+
+// while loop (condition){ code to execute }
+
+// let suraj_Chand = false;
+
+// while(suraj_Chand){
+
+//    console.log("Dunya qayam hai");
+   
+// }
+
+
+  //             0       1        2        3
+ let array = ["apple","banana","orange","mango"];
+
+ let fruit = 0; //initialize
+ 
+ //       condition
+//  while(fruit < array.length){
+
+    
+//     console.log(array[fruit]); //code to exeute
+
+//     fruit++ 
+//     increment (putting the increment beneath the
+ //    console statment so that it is increased by one after ,
+ //    it will give undefined because count is before hand 
+ //    increased by 1 and then the value starts from 1 so
+ //    accessing index 1 not zero thus returning 2nd value of array
+ //    and we get undefined at the end)
+ //  }
+
+
+// import inquirer from "inquirer";
+
+// while(true){
+
+// let userName = await inquirer.prompt({
+
+//    name:"name",
+//    type:"input",
+//    message:"Enter your name"
+// });
+
+// let confirm = await inquirer.prompt({
+
+//    name:"confirm",
+//    type:"confirm",
+//    message:"Do you want to enter your name again?"
+
+// });
+
+// if(confirm.confirm === false){
+//    break;
+// }
+
+// let userData = localStorage.setItem("Name: " , userName.name)
+
+// console.log(userData);
+
+// }
+
+
+
+//do while loop (it will execute once before starting the loop)
+
+// let count = 0;
+
+// do{
+
+//    count++
+//    console.count("hello");
+   
+// }while(count < 10)
+
+
+
+
+
+   // constructor(num1:number,num2:number){
+
+   //    this.num1 = num1
+   //    this.num2 = num2
+
+   // }
+
+   // function findMinMax(array:number[]):number{
+
+   //    let minMax = array[0];
+   //    let i = 0;
+   //    while(i < array.length){
+   //       i++;
+   // //change the "<" less than or greater than symbol to get different results
+   //       if(minMax > array[i]){
+
+   //          minMax = array[i]
+   //       }
+
+   //    }
+   //    return minMax;
+      
+   // }
+
+   // console.log(findMinMax([1,2,3,4,7,10]));
+   
+
+   // interface Car {
+
+   //    make:string
+   //    model:string
+   //    year:number
+   //    features:any[]
+
+   // }
+
+   // function make_car(make:string, model:string, year:number, ...features:any[] ):Car{
+
+   //    let car:Car = {
+   //       make:make,
+   //       model:model,
+   //       year:year,
+   //       features:features
+   //    }
+
+   //    return car;
+   // }
+
+   // let car1 = make_car("toyota","landcruiser",2024,{color:"white", doors:4})
+
+   // console.log(car1);
+   
+   //nullish coalecing
+
+   // on numbers
+
+   // function multiply(num1:number,num2:number,num3?:number):number{
+
+   //    return num1 * num2 + (num3?? 1)
+
+   // }
+
+   // console.log(multiply(5,6));
+   
+
+   ///on string 
+
+   // function greet(user?:string){
+
+   //    return `Hello ${user?? "user"}`
+   // }
+
+   // console.log(greet());
+   
+
+   let Numbers = [8, 4, 2, 6, 7, 9, 10, 34, 6, 88];
+
+///loop
+
+///function
+
+/// comparision operator
+
+/// variable => max number
+
+//conditional statments
+
+// function findMaxNumber(array: number[]): number {
+//   let maxNumber = array[0];
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (maxNumber > array[i]) {
+//       maxNumber = array[i];
+//     }
+//   }
+
+//   return maxNumber;
+// }
+
+// console.log(findMaxNumber(Numbers));
+
+
+
+
+/// defafult parameter
+
+// function greet(name:string = "User"){
+
+//    return `Hello ${name}`
+// }
+
+// console.log(greet("Shahabuddin"));
+
+
+//Optional parameter
+
+
+// function user(name:string,age:number,gender?:string,){
+
+//    return {
+//       NAME:name,
+//       AGE:age,
+//       GENDER:gender
+//    }
+//    }
+//    console.log(user("",20,));
+   
+
+///Rest parameter
+
+
+// function user(name:string,age:number, ...data:unknown[]){
+
+//    let UserData = {
+
+//       NAME:name,
+//       AGE:age,
+//       Data:data,
+//       showInfo:function(){
+
+//          console.log(this.Data);
+        
+//       }
+
+//    }
+//    return UserData;
+
+//    }
+
+//    console.log(user("shahabuddin",20,{id:123,gender:"male"},["A","AB+","O"],1223));
+   
+//    let person = user("shahabuddin",20,{id:123,gender:"male"},["A","AB+","O"],1223)
+
+//    person.showInfo()
+   
+
+///function over load
+
+
+//narrowing
+
+//we use conditional statements to narrow down types of variables
+
+//let variable:string|boolean|number = "hello"
+
+// function returnValue(value?:number|boolean|string):unknown{
+
+//    // narrowing double data types
+//    if(typeof value === "number" || typeof value === "string"){
+
+//       return value
+
+//    }else if(typeof value === "string"){
+
+//       return value.length
+
+//    }else if(typeof value === "boolean"){
+
+//       return !value ;
+
+//    }else{
+
+//       return value ;
+//    }
+
+// }
+
+
+//console.log(returnValue());
+
+function returnValue(value?:number|boolean|string):unknown{
+
+   // narrowing single data types
+   if(typeof value === "number"){
+
+      return value.toFixed(2)
+
+   }else if(typeof value === "string"){
+
+      return value.length
+
+   }else if(typeof value === "boolean"){
+
+      return !value ;
+
+   }else{
+
+      return value ;
+   }
+
+}
+
+
+
+function greet(arg1:number,arg2:number):number;
+function greet(arg1:string,arg2:string):string;
+
+function greet(arg1:boolean,arg2:boolean):boolean;
+
+function greet(arg1:unknown,arg2:unknown):unknown{
+
+   return `Hello ${arg1} ${arg2}`
+}
+
+console.log(greet(1,2));
+console.log(greet("a","b"));
+console.log(greet(true,false));
+
+
+//Funcitons
+
+//parameter
+
+//types of parameters
+
+// let num1:number = 4;
+
+// let num2:number = 6;
+
+//  let result:number = num1 + num2;
+
+//  console.log(result);
+ 
+//  ///
+
+//  let num3:number = 4;
+
+//  let num4:number = 6;
+ 
+//   let result2:number = num3 + num4;
+ 
+//   console.log(result2);
+  
+
+///function
+
+//function declaration
+
+        //      function signature
+// function sum (num1:number,num2:number):number {
+
+//    return num1 + num2; //returned values
+
+// }
+
+// console.log(sum(7,8)); // call signature
+
+
+//parameters
+
+// let user = "Zahid sultan";
+
+// console.log(`Hello ${user}`);
+
+// let user1 = "Hina naeem";
+
+// console.log(`Hello ${user1}`);
+
+
+// function greet (name?:string):string{
+
+//    return `Hello ${name}`
+
+// }
+
+ //console.log(greet()); // greets the argument 
+// console.log(greet()); //greets thee default value in the parameter
+
+
+///Optional parameter
+
+/// nullish coalescing ??
+
+// if value is undefined value = "default value"
+
+
+// function greet (name:string,age?:number):string{
+
+//    return `
+//    Hello my name is ${name}.
+   
+//    I am ${age?? 20} years old.`
+
+// }
+
+// console.log(greet("Shahabuddin",40)); 
+
+
+///Rest parameter
+
+// function introduction(name: string,age: number, ...info:unknown[]) {
+
+//    return `
+//    Hello my name is ${name}
+//    I am ${age} years old
+//    I love ${info[0]} and ${info[1]}
+//    `
+
+// }
+
+
+// console.log(introduction("shahab",23,"cricket","cooking"));
+
+
+///////
+
+Async , prmises , callbacks
+
+/////////
+
+
+//Async function
+
+//sync behaviour
+
+// console.log(1);
+// console.log(2);
+// console.log(3);
+// console.log(4);
+
+//async behaviour
+
+// console.log("1");
+
+// setTimeout(() => console.log("2"),3000);
+
+// console.log("3");
+
+//setTimeout(() => console.log("hello there 2") ,1000);
+
+//promises
+
+//.then()
+//.catch()
+//.finally
+
+
+// let invitation = new Promise((accepted, rejected) => {
+
+// setTimeout(()=>{ // for pending dealay
+
+  
+//   let invite = true; // true:accepted | false:rejected
+
+//   if (invite) {
+//     accepted("Your invite is accepted!");
+//   } else {
+//     rejected("Your invite was rejected!");
+//   }
+
+// },3000)
+
+
+
+// });
+
+
+// invitation
+
+
+//   .then((accepted) => console.log(`
+//   ${accepted}
+//   Prepare for dinner.
+//   `)
+//   )
+
+//   .catch((rejected) => console.log(`
+//    ${rejected}
+//    The guest is not coming, don't Cook!
+//   `)
+//   )
+
+//   .finally(()=> console.log("sleep"))
+
+
+
+
+//callback function
+
+// function sum (num1:number,num2:number,showResult:(result:number)=>void){
+
+//   let result = num1 + num2;
+
+//   showResult(result)
+
+// }
+
+// function(result:number):void{
+
+//   console.log(result);
+
+// }
+
+// function showResult(result:number):void{
+
+//   console.log(result);
+
+// }
+
+// sum(4,6, result => console.log(result)) //arrow function
+
+// sum(4,6, function(result:number):void{
+
+//   console.log(result);
+
+// }) //function definition
+
+// sum(4,6, showResult) // external function declaration passed as an argument
+
+
+/// callback hell => pyramid of doom
+
+function EidPreparation(): void {
+  setTimeout(() => {
+    console.log("Wake up early");
+
+    setTimeout(() => {
+      console.log("Take a shower");
+
+      setTimeout(() => {
+        console.log("Wear clean cloths");
+
+        setTimeout(() => {
+          console.log("Go for Eid prayer");
+
+          setTimeout(() => {
+            console.log("Say Eid mubarak");
+
+            setTimeout(() => {
+              console.log("Eid Sweets");
+
+              setTimeout(() => {
+                console.log("Distribute Eidi");
+
+                setTimeout(() => {
+                  console.log("Sleep");
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  });
+}
+
+//EidPreparation();
+
+
+
+//funciton for delay
+// function delay (time:number){
+
+//   return new Promise(function(resolve){
+
+//     return setTimeout( resolve, time )
+//   })
+// };
+
+/// async and await
+
+let prepareForEid = async () => {
+
+  let delay = (time:number) => new Promise( resolve => setTimeout(resolve,time));
+
+  delay(1000);
+  console.log("Wake up early");
+ await delay(1000);
+  console.log("Take a shower");
+ await delay(1000);
+  console.log("Wear clean cloths");
+ await delay(1000);
+  console.log("Go for Eid prayer");
+ await delay(1000);
+  console.log("Say Eid mubarak");
+ await delay(1000);
+  console.log("Eid Sweets");
+ await delay(1000);
+  console.log("Distribute Eidi");
+ await delay(1000);
+  console.log("Sleep");
+
+};
+
+//prepareForEid();
+
+/// function overloads
+
+
+function greet (param1:number,param2:string):string | number //number
+
+function greet (param1:string,param2:number):string | number  //string
+
+function greet (param1:number,param2:boolean):boolean | number  //boolean
+
+function greet (param1:string,param2:boolean,param3?:number):boolean | string //boolean
+
+
+function greet(param1:unknown,param2:unknown,param3?:unknown):number|string|boolean {
+
+  return `${param1} ${param2} ${param3 ?? 0}`
+
+}
+
+console.log(greet(1,"hello"));
+ console.log(greet("bello",2));
+ console.log(greet(4,true));
+ console.log(greet("good",true));
+
+
+
+   

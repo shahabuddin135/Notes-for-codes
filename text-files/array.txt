@@ -1,0 +1,475 @@
+///Array
+
+let value1: string = "apple";
+let value2: number = 1;
+let value3: boolean = true;
+let value4 = "banana";
+
+//Number array
+
+let numberArray: number[] = [1, 2, 3, 4, 5];
+
+//console.log(numberArray[3]);
+
+//console.log(typeof numberArray);
+
+//string array              // 0         1        2         3
+let stringArray: string[] = ["apple", "mango", "orange", "banana"];
+
+//console.log(  stringArray[2]  );
+
+//Boolean Array
+let booleanArray: boolean[] = [true, false, true, false];
+
+//Mix array
+
+let mixArray: (number | string | boolean)[] = [5, "apple", true];
+
+//Nested array
+
+//Multi dimentional array
+
+let nestedArray: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6], //2nd row and 2nd column === 5
+  [7, 8, 9],
+]; /// array array
+
+//console.log(nestedArray[1][1]);
+
+// nested mix array
+//   0               1                  2
+let nestedArray2: (number[] | string[] | boolean[])[] = [
+  [1, 2],
+  ["apple", "banana"],
+  [true, false],
+];
+//    0          1
+//console.log(nestedArray2[1][0]);
+
+//storing objects in arrays
+
+//              0                                1
+let objectArray = [
+  { name: "shahab", age: 20 },
+  { name: "Abdul salam", age: 25 },
+];
+
+// console.log(  objectArray[0].name  );
+
+
+
+
+
+
+
+
+
+//Qno:0 create a function which sums the array numbers using for loop
+
+function sumArray(array: number[]) {
+  let initailValue = array[0];
+
+  for (let currentValue = 0; currentValue <= array.length; currentValue++) {
+    return initailValue + array[currentValue];
+  }
+}
+
+//console.log(sumArray([1,2,3,4,5]));
+
+
+// Q1:Write a function and checkEvenOdd that checks 
+// a number and check whether it is even or odd?
+
+function check_even_odd(num:number){
+
+  if(num % 2 === 0){
+    return `${num} is EVEN`
+  }else{
+    return `${num} is ODD`
+  }
+
+}
+
+//console.log(check_even_odd(5));
+
+
+// Q2:Write a function arrayOperation that create an array of numbers,
+// add a number at the end of array,
+// remove the first number and prints the modified array?
+
+function arrayOperation(Numarray:number[]){
+
+  Numarray.push(7)
+  Numarray.shift();
+
+  return Numarray;
+
+}
+
+//console.log(arrayOperation([1,2,3,4,5,6]));
+
+
+
+// Q3:Write a function, multiplies the elements of an array by 2
+//  and returns the modified numbers?
+
+function multiplyBy2(array:number[]){
+
+  return array.map( number => number * 2);
+
+}
+
+//console.log(multiplyBy2([1,2,3,4,5]));
+
+
+// Q4:Write a function findLargest that acCepts an aray of numbers
+//  and returns theclargest number?
+
+function findMaxNum(array:number[]){
+
+  let max = array[0];
+
+  for(
+    
+    let num = 0;
+
+    num < array.length;
+
+    num++
+    
+    ){
+
+    if(max < array[num]){ // change the < less than or  > greater than operator to change the functionality of the function
+// question :but max is assigned later, how does max get updated in the comarision
+//answer : the value of max is updated not assigned, it has the max value, and when it doesnt get any further max values till the array length is finished, it assigned to max .
+      max = array[num]; 
+    }
+
+  }
+
+  return max;
+
+}
+
+//console.log(findMaxNum([2,3,455,6,1,7,66]));
+
+
+// Q5:Write a function reverseString that accepts the string and returns the reversed string?
+
+function reverseString(stringValue:string){
+
+ let reversedString = stringValue.split("").reverse();
+
+ return reversedString.join("")
+  
+}
+
+console.log(reverseString("Shahabuddin"));
+
+
+
+/////////////////
+
+ ARRAY METHODS
+
+//////////////
+
+
+/// Array Methods
+
+
+//methods are builtin functions in programming languages to perform certain tasks
+                  //    0        1        2       3       4        5
+//let array:string[] = ["apple","banana","orange","apple","mango", "kiwi","apple"]; //length  = 5
+
+//length
+//console.log(  array.length   );
+
+///indexOf
+//console.log(array.indexOf("apple")); // prints the index of value if present else return -1
+
+//let array:string[] = ["apple","banana","orange","apple","mango", "kiwi","apple"];
+
+//lastIndexof
+
+//let array:string[] = ["apple","banana","orange","apple","mango", "kiwi","apple"];
+
+//console.log( array.lastIndexOf("apple",-2));
+
+
+//concat method
+let array1:string[] = ["mango", "kiwi","watermelon"];
+
+let array2:string[] = ["apple","banana","orange"];
+
+//console.log(array2.concat(array1));
+
+//spread operator
+
+//console.log([...array1 , ...array2]);
+
+
+///forEach method
+
+//let array:string[] = ["mango", "kiwi","watermelon","apple","orange"];
+
+//array.forEach( fruit => console.log(`i love ${fruit}`));
+
+/// filter method
+
+///filter number
+// let array:(string|number|boolean)[] = ["mango",123,true,false,10,"banana"];
+
+// let filteredvalue = array.filter((value) => {
+
+//   return typeof value === "number" && value > 10
+
+// });
+
+// console.log(filteredvalue); //returns filtered values
+
+// ///filter string
+
+// let array:(string|number|boolean)[] = ["mango",123,true,false,10,"banana"];
+
+// let filteredvalue = array.filter((value)=>{
+
+//   return typeof value === "string" && value.includes("m")
+
+// });
+
+// console.log(filteredvalue); //returns filtered values
+
+
+// //filter boolean
+
+// let array:(string|number|boolean)[] = ["mango",123,true,false,10,"banana"];
+
+// let filteredvalue = array.filter((value)=>{
+
+//   return typeof value === "boolean" &&  value === true;
+
+// });
+
+// console.log(filteredvalue); //returns filtered values
+
+
+
+/// Array Methods
+
+
+//methods are builtin functions in programming languages to perform certain tasks
+                  //    0        1        2       3       4        5
+//let array:string[] = ["apple","banana","orange","apple","mango", "kiwi","apple"]; //length  = 5
+
+//length
+//console.log(  array.length   );
+
+///indexOf
+//console.log(array.indexOf("apple")); // prints the index of value if present else return -1
+
+//let array:string[] = ["apple","banana","orange","apple","mango", "kiwi","apple"];
+
+//lastIndexof
+
+//let array:string[] = ["apple","banana","orange","apple","mango", "kiwi","apple"];
+
+//console.log( array.lastIndexOf("apple",-2));
+
+
+//concat method
+let array1:string[] = ["mango", "kiwi","watermelon"];
+
+let array2:string[] = ["apple","banana","orange"];
+
+//console.log(array2.concat(array1));
+
+//spread operator
+
+//console.log([...array1 , ...array2]);
+
+
+///forEach method
+
+//let array:string[] = ["mango", "kiwi","watermelon","apple","orange"];
+
+//array.forEach( fruit => console.log(`i love ${fruit}`));
+
+/// filter method
+
+///filter number
+// let array:(string|number|boolean)[] = ["mango",123,true,false,10,"banana"];
+
+// let filteredvalue = array.filter((value) => {
+
+//   return typeof value === "number" && value > 10
+
+// });
+
+// console.log(filteredvalue); //returns filtered values
+
+// ///filter string
+
+// let array:(string|number|boolean)[] = ["mango",123,true,false,10,"banana"];
+
+// let filteredvalue = array.filter((value)=>{
+
+//   return typeof value === "string" && value.includes("m")
+
+// });
+
+// console.log(filteredvalue); //returns filtered values
+
+
+// //filter boolean
+
+// let array:(string|number|boolean)[] = ["mango",123,true,false,10,"banana"];
+
+// let filteredvalue = array.filter((value)=>{
+
+//   return typeof value === "boolean" &&  value === true;
+
+// });
+
+// console.log(filteredvalue); //returns filtered values
+
+
+///join method
+
+// let fruits:string[] = ["apple","banana","orange","mango"];
+
+//console.log(fruits); // joins the values of an array and can be seperated by your prefered symbol
+
+//console.log( fruits.join("-") );
+
+///push method
+
+// let fruits:string[] = ["apple","banana","orange","mango"];
+
+// //before
+// console.log("Before: ",fruits);
+
+ // fruits.push("apple") ; // adds a value to the end of an array
+
+//  //after
+//  console.log("After: ",fruits);
+ 
+
+//pop method
+
+// let fruits:string[] = ["apple","banana","orange","mango"];
+
+// console.log("Before: ",fruits);
+
+// let removedValue = fruits.pop();  // removes the last value of an array
+
+// console.log("After: ",fruits);
+
+// console.log("Removed Value: ",removedValue);
+
+
+/// reverse method
+
+// let fruits:string[] = ["apple","banana","orange","mango"];
+
+// console.log("Before: ",fruits);
+
+// fruits.reverse(); //reverse the order of the array
+
+// console.log("After: ",fruits);
+
+
+///sort method
+
+// let fruits:(number | string )[] = [9,0,6,4,3,1,2,"a","d","e","b","c"]; 
+
+// console.log("Before: ",fruits);
+
+// let sortedArray = fruits.sort() // arrange the values of the array in alphabetic or numeric order
+
+// console.log("After: ", sortedArray);
+
+
+//shift method
+
+
+// let fruits:string[] = ["apple","banana","orange","watermelon"];
+
+
+// console.log("Before: ",fruits);
+
+// let removedValue = fruits.shift(); //removes first value of an array
+
+// console.log(removedValue); // returns the first removed value
+
+
+// console.log("After: ", fruits);
+
+
+///unshift method
+
+// let fruits:string[] = ["apple","banana","orange","watermelon"];
+
+
+// console.log("Before: ",fruits);
+
+// let removedValue = fruits.unshift("mango"); //adds a value of to the start of an array
+
+// console.log(removedValue);// return the new length of an array
+
+
+// console.log("After: ", fruits);
+
+
+///sort method with callback
+
+// ​​let numbers = [4, 2, 5, 1, 3, 6,10, 9, 7, 8];
+
+// let sortedArr = numbers.sort((a,b)=>{
+
+//  //  return b-a;///reverse sort use one return statment at a time
+//   // return a-b ;/// sort
+// });
+
+// console.log(sortedArr);
+
+///slice method
+
+// let array = ["a","b","c","d","e"];
+
+// console.log(array.slice(2,4));
+
+
+//splice method
+
+//delete values
+//add value
+// delete and add value
+//add values without deleting
+
+
+// //            0    1   2   3   4  
+//  let array = ["a","b","c","d","e"];
+
+// array.splice(2,2)
+
+//  console.log(array);
+ 
+
+//map method
+
+// let nums:string[] = ["imran","zain","hina","haroon"];
+
+// let squared = nums.map(name => `${name} GIAIC`); // map method returns an array
+
+// console.log(squared);
+
+
+//reduce method //from left to right
+
+// let array:number[] = [1,2,3,4,5,6,7,8,9,10];
+
+// let reduced = array.reduce((accumulated,current) => accumulated * current )
+
+// console.log(reduced);

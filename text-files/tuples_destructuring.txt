@@ -1,0 +1,143 @@
+
+//Tuple
+
+
+//let mixArray:(string|number|boolean)[]  = [1,2,3,4,"shahab","Mohsin",true,false];
+
+//type Structure = readonly [unknown,number,boolean,string[]?]; //cannot modify this because it is a readonly array
+
+//let array:Structure = [true,7,true]; /////////
+
+//let array2:Structure= ["shahab",7,true];
+
+//array2 = ["mohin",5,false];  /// can be reassigned
+
+//const array3:Structure = ["shahab",7,true];
+
+//array3 = ["mohin",true,5] //cannot reassign constant
+
+//console.log(array);
+
+
+///Nested array type
+
+
+// type Structure = readonly [
+
+//   {
+//     name: string,
+//     age: number,
+//     hobbies:[string,number,boolean], ///sub tuple or nested tuple
+//     adress: { city:string, street:number },
+//   },
+//   {
+//     name: string,
+//     age: number,
+//     hobbies:string[],
+//     adress: { city:string, street:number },
+//   },
+
+// ]
+
+// let array:Structure = [
+//   {
+//     name: "Darakhsan",
+//     age: 40,
+//     hobbies: ["cooking", 1, true],
+//     adress: { city: "Karachi", street: 12 },
+//   },
+//   {
+//     name: "Hina",
+//     age: 70,
+//     hobbies: ["gardening", "Writing", "coding"],
+//     adress: { city: "Islamabad", street: 1 },
+//   }
+// ];
+
+
+///destructuring
+
+
+
+
+//let [firstName,secondName]:[string,string] = ["shahab","Waqqar"];
+
+
+
+
+// let firstName:[string,string] = ["shahab","Waqqar"];
+
+
+
+// console.log(secondName);
+
+
+
+// let firstName = Array[0];
+
+// console.log(firstName);
+
+// let secondName = Array[1];
+
+// console.log(secondName);
+
+
+
+///complex destructuring
+
+type Structure = readonly [
+
+  {
+    name: string,
+    age: number,
+    hobbies:[string,number,boolean], ///sub tuple or nested tuple
+    adress: { city:string, street:number },
+  },
+  {
+    name: string,
+    age: number,
+    hobbies:string[],
+    adress: { city:string, street:number },
+  },
+
+]
+
+let array:Structure = [
+  {
+    name: "Darakhsan",
+    age: 40,
+    hobbies: ["cooking", 1, true],
+    adress: { city: "Karachi", street: 12 },
+  },
+  {
+    name: "Hina",
+    age: 70,
+    hobbies: ["gardening", "Writing", "coding"],
+    adress: { city: "Islamabad", street: 1 },
+  }
+];
+
+let [firstObj,secondObj]:Structure = [
+  {
+    name: "Darakhsan",
+    age: 40,
+    hobbies: ["cooking", 1, true],
+    adress: { city: "Karachi", street: 12 },
+  },
+  {
+    name: "Hina",
+    age: 70,
+    hobbies: ["gardening", "Writing", "coding"],
+    adress: { city: "Islamabad", street: 1 },
+  }
+];
+
+let hobby1 = array[1].hobbies[1]
+
+ let hobby2 = secondObj.hobbies[0]
+
+ console.log(hobby1);
+
+ console.log(hobby2);
+ 
+ 

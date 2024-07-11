@@ -1,0 +1,207 @@
+//3 projects
+//Arthmetic operators
+//logical operators
+//ternery operators
+//unary operators
+//comparision operators
+
+///Arthmetic operators
+
+// console.log(5 + 5);
+// console.log(10 - 5);
+// console.log(5 * 4);
+// console.log(8 / 4);
+// console.log(5 % 2);
+
+//Uniary operators
+
+let a = 0;
+
+console.log(++a); // 1 || 0
+
+//DO NOT FORGET S I R E,
+// STRONG WILL POWER !!!
+
+//comparision operator
+
+// ! //not operator
+// === strict check
+// == loose check
+// > greater
+// < less
+// >= greater than and equal
+// <= less than and equal
+// != not equal
+// !== not equal
+
+//Logical opeartor
+
+// && operator => true && true => true
+// && operator => false && true => false
+// && operator => false && false => false
+
+//OR operator
+
+// || OR operator => true || true => true
+// || OR operator => true || false => true
+// || OR operator => false || false => false
+
+//Ternery operator
+
+//  false || true && false || true? console.log("ok") : console.log("not ok");
+
+// //Eid wishing project
+
+// for(let count = 0; count <= 10; count++){
+
+//  count % 2 === 0? console.log(`${count} Eid mubarak`) : console.log(`${count} Khair mubarak`);
+
+// }
+
+// Greeting with time project
+
+// 1 AM
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
+// 11
+// 12//AM
+
+// 13 = 1 PM
+// 14 = 2
+// 15 = 3
+// 16 = 4
+// 17 = 5
+// 18 = 6
+// 19 = 7
+// 20 = 8
+// 21 = 9
+// 22 = 10
+// 23 = 11
+// 24 = 12 PM
+
+import inquirer from "inquirer";
+
+// while(true){
+
+// let {time} = await inquirer.prompt({
+
+//   name:"time",
+//   type:"number",
+//   message:"Enter your current time to receive greetings"
+// });
+
+// if(time >= 22 || time <= 4){
+
+//   console.log("Good night");
+
+// }else if(time >= 5 && time <= 11){
+
+//   console.log("Good morning");
+
+// }else if(time >= 12 && time <= 17){
+
+//   console.log("Good Afternoon");
+
+// }else if(time >= 18 && time <= 21){
+
+//   console.log("Good Evening");
+
+// }else{
+//   console.log("Invalid time format");
+
+// }
+
+// let {confirm} = await inquirer.prompt({
+
+//   name:"confirm",
+//   type:"confirm",
+//   message:"Do you want to enter more time?"
+// })
+
+// if(!confirm){
+//   console.log("Time is precious");
+
+//   break;
+// }
+
+// }
+
+///temperature converter
+
+// celsius to fahrenheit
+
+// fahrenheit to celsius
+
+// while(true){
+
+//   let {choice} = await inquirer.prompt({
+
+// name:"choice",
+// type:"list",
+// choices:["Celsius to fahrenheit", "Fahrenheit to celsius"],
+// message:"Choose your prefered temperature conversion "
+
+// });
+
+//  if(choice === "Celsius to fahrenheit"){
+
+//   let {Celsius} = await inquirer.prompt({
+
+//     name:"Celsius",
+//     type:"number",
+//     message:"Enter your temperature in celsius"
+
+//     });
+
+//     function celsiusToFahrenheight(celsius:number){
+
+//       let fahrenheit = celsius * 9/5 +32;
+
+//       return fahrenheit.toFixed(2)
+//     }
+
+//     console.log(celsiusToFahrenheight(Celsius));
+
+//  }else{
+
+//   let {Fahrenheit} = await inquirer.prompt({
+
+//     name:"Fahrenheit",
+//     type:"number",
+//     message:"Enter your temperature in Fahrenheit"
+
+//     });
+
+//     function fahrenheightToCelsius(fahrenheit:number){
+
+//       let celsius = (fahrenheit -32 )* 5/9;
+
+//       return celsius.toFixed(2)
+
+//     }
+
+//      console.log(fahrenheightToCelsius(Fahrenheit));
+
+//  }
+
+// let {confirm} = await inquirer.prompt({
+
+//   name:"confirm",
+//   type:"confirm",
+//   message:"Do you want to convert more?"
+// })
+
+// if(!confirm){
+//   console.log("Thanks for using our temperature converter");
+
+//   break;
+// }
+
+// }

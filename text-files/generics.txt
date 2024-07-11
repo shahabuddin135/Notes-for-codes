@@ -1,0 +1,55 @@
+
+// function generic<T>(value:T):T{
+
+//   return value;
+// }
+
+// console.log(generic<string>("hello Shahabuddin")); // outputs hello shahabuddin
+
+//The above function is a generic function, where the "generic" is the function name,
+//The <T> is a parameter like normal functions, we create it to pass a type as an argument to it,
+//The "value" is a normal parameter with type "T", it is without angle braces, just we dont write parameters
+//with round braces, the "value" parameter will use T as type, and we will pass a type argument to it.
+//The function returns the  "value" which has type "T" so the function return type is also "T";
+//We console the generic function to the console, where the "generic" is the name of the function, the angle
+//braces next to it is like a function call, but for "T" in which we will pass a type, <number> for example
+//finally we put the round brackets, to pass the argument to the function parameter with type "T" which we set to number type
+//so basically we are passing 2 arguments to a function, one for type with angle braces <>, and the other for parameter with 
+//round braces ().
+
+
+/// generics in interfaces
+
+// interface person<T1,T2> {
+
+//   name:T1
+//   age:T2
+// }
+
+// let user:person<string,number> = {name:"shahabuddin",age:20}
+
+// console.log(user);
+
+///generics in classes
+
+class Person<T1,T2> {
+
+  name:T1
+  age:T2
+
+  constructor(name:T1,age:T2){
+
+    this.name = name;
+    this.age = age;
+
+  }
+
+  greet(){
+    return `My name is ${this.name} and i am ${this.age} years old`
+  }
+}
+
+
+let user = new Person<string,number>("shahabuddin",20)
+
+console.log(user.greet());

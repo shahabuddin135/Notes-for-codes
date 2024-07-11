@@ -1,0 +1,123 @@
+
+// string enum
+
+// enum Direction {
+//   up = "up" ,
+//   down = "down",
+//   left = "left",
+//   right = "right"
+
+// }
+
+// console.log(Direction.up);
+// console.log(Direction.down);
+// console.log(Direction.left);
+// console.log(Direction.right);
+
+///Numeric Enums
+
+// enum Direction {
+
+//   Up, //0
+//   Down, //1
+//   Left, //2
+//   Right //3
+// }
+
+//enums with no initializers have values starting from 0 like indexes
+
+//if the first property of an enum is initialised with a number, the other prperties will
+//automatically increment without an initializer.
+
+// enum Directions {
+
+//   Up = 1, //1
+//   Down, //2
+//   Left, //3
+//   Right //4
+// }
+
+// console.log(Directions.Down); //prints 2
+
+
+///enums properties requires values when the enum property is initialized by a string or functions,
+//enum properties does not requires initializers when the propertiy is given a numeric value,
+
+//example 1
+
+// enum Direction {
+//   up = 1,
+//   down,//ok
+//   left,//ok
+//   right //ok
+
+// }
+
+//Example 2
+
+// enum Direction {
+//   up = 1,
+//   down = "down",//ok
+//   left,// error : Enum member must have initializer.
+//   right // // error : Enum member must have initializer.
+
+// }
+
+//Example 3
+
+// enum Direction {
+
+//   up = "up", //string value
+//   down = 2, //number value
+//   left, //ok
+//   right // ok
+// }
+
+
+//hetrogenous enum // not recommended. until you are a proass person tryna achieve somthin big ;) just kiddin.
+
+//string and numbers are used together 
+
+enum Direction {
+
+  yes = "yes",
+  no = 0,
+}
+
+enum Directions {
+
+  no = 0,
+  yes = "yes",
+
+}
+
+
+// //constant enum
+
+// enum ConstEnum  {
+
+//   one = 1,
+//   two = 2,
+//   three = 3,
+
+// }
+
+// //computed enum
+
+// enum ComputedEnum  {
+
+//   oneSquared = 1 * 1, //1
+//   twoSquared = 2 * 2, // 4
+//   threeMinued = twoSquared - 3, // prints 1 // also an example of mixedValues in enums
+
+// }
+
+
+//computed anum
+
+ enum num {
+
+  one = 1*2,
+  two = 2 * one,
+  three = one + two
+}

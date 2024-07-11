@@ -1,0 +1,372 @@
+// //normal dot notation
+
+// let user1 = {
+ 
+//   name:"shahabuddin",
+//   id:12345
+// }
+
+// console.log(user1.id); // prints 12345
+
+// //normal square bracket notation
+
+// let user2 = {
+ 
+//   name:"shahabuddin",
+//   id:12345
+// }
+
+// console.log(user2["name"]); //prints shahabuddin
+
+
+//difference square bracket
+
+interface User  {
+  [keys:string]:any;
+  name:string;
+  "age-price":number;
+
+}
+
+// for square brackets
+
+let user:User = {
+  
+  name:"mohsin",
+  "age-price":44,
+  }
+
+  // console.log(user["age-price"]); // square is needed for string keys
+
+  // Dot notation can't be used for string keys
+  
+  
+//   let noun = "name";
+
+// console.log(user[noun]);
+
+//for dot notation
+let noun = "name";
+
+let obj = {
+
+  [noun]:"shahab uddin",
+  age:20,
+  id:1234,
+  role:"student"
+
+}
+
+
+
+
+let newObject = {
+
+  name:"shahabuddin",
+  age:20,
+  id:12345,
+  "hobbies":["cricket","reading","coding"]
+}
+
+
+
+
+let keys = Object.keys(newObject);
+
+console.log(keys[1]);
+                                                   
+///////////////////////////////////////////////
+           //blueprint  interface Car        //
+                                            //
+  //4 wheels 
+  //white color
+  //sunroof                                 //
+                                            //
+                                            //
+                                            //
+                                            //
+//////////////////////////////////////////////
+
+
+
+// keys.forEach(key => console.log(key));
+
+
+// values.forEach(value => {
+  
+//   if(Array.isArray(value)){
+
+//     value.forEach(value => console.log(value)
+//     )
+//     console.log(value)
+//   }
+// }
+// );
+
+interface Animals  {
+
+  species:string
+  price:number
+  Activestatus:boolean
+
+}
+
+type Animal = {
+
+  name:string;
+  age:number;
+
+}
+
+let animal:Animals & Animals = {
+
+  species:"brown bear",
+  price:1,
+  Activestatus:true
+
+
+}
+
+
+
+ let objs:Person = {
+   name:"shahabuddin",
+   age:22,
+  species:"brown bear",
+  price:1,
+  Activestatus:true,
+ }
+
+
+ //type can be assigned another type
+ //type and type can be used together using interesection "&"
+ //type and interface can be used together
+ //type cannot be duplicate
+ //interface can be duplicate
+ //type and interfacce both can be used together using "&" and assigned to another type
+ //interfacce cannot be assigned , not to other types or interface
+ //interfaces can merge
+ //types cannot merge
+ //types are more flexible, they can be used as union, 
+
+
+ interface Pet {
+  name:string;
+ }
+
+ let pet:Pet;
+
+ let dog = { name: "Lassie", owner: "Rudd Weatherwax" };
+
+  pet = dog;
+
+
+///////////////////////////////
+Object Oriented Programming //
+/////////////////////////////
+
+//Class
+//blueprint === class
+//the properties are not blueprint
+
+interface PRODUCT1 {
+
+ name:string;
+  price:number;
+  
+
+}
+
+//access modifyers
+// private 
+// protected
+// public
+// static 
+
+
+interface PRODUCT2 extends PRODUCT1 {
+
+  
+  brand:string;
+
+
+}
+
+class Product  {
+
+ private name:string;
+  price:number;
+  
+
+  constructor(Name:string,Price:number,brand:string){
+
+    this.name = Name;
+    this.price = Price;
+    
+
+  }
+
+  showDetails(){
+      
+    console.log(`Product name: ${this.name} Product Price: ${this.price}`);
+    
+  }
+
+}
+
+// let phone = new Product("samsung",50000);
+
+// phone.showDetails();
+
+//creating a child class
+
+class Television extends Product  {
+
+  size:number;
+  screen_Resolution:string;
+
+  constructor(Name:string,Price:number,Size:number,Screen:string){
+
+    super(Name,Price)
+
+    this.size = Size;
+    this.screen_Resolution = Screen;
+  }
+
+  
+  show_TV_Details(){
+
+    this.showDetails();
+    console.log(`Screen size ${this.size} Screen Resolution: ${this.screen_Resolution}`);
+    
+  }
+
+}
+
+
+let TV = new Television("TCL",100000,50,"4K");
+
+TV.show_TV_Details();
+
+console.log(TV instanceof Product);
+
+
+
+//Structural typing
+
+//Object litteral
+
+let object:{name:string,age:number} = {
+
+  name:"shahabuddin",
+  age:20,
+  //ID:123, Error Object literal may only specify known properties
+}
+
+interface Person {
+
+  name:string;
+}
+//using function
+function run(Obj:Person){
+
+  return object.name
+}
+
+let person = {name:"shahab",age:20,ID:123};
+let animal = {name:"cow", age:20,sound:"Moo"}
+let product = {date:12}
+
+run(person)
+run(animal)
+//run(product) Argument of type '{ date: number; }' is not assignable to parameter of type '{ name: string; }'.
+
+
+interface Car {
+
+  wheels:number
+}
+
+interface Cycle {
+
+  wheels:number
+}
+
+function magic(obj:Car={wheels:number}){}
+
+
+
+
+
+function calculate():void{
+
+function addition(num1:number,num2:number):number{
+
+ console.log(num1 + num2);
+
+ return num1 + num2
+
+}
+
+console.log(addition(20,10));
+
+}
+
+//calculate();
+
+
+
+//never
+
+function runLoop():never{
+
+  while(true){
+
+    console.log("I have no ending point");
+    
+  }
+
+}
+
+//runLoop();
+
+
+
+
+
+
+
+//narrowing
+
+function run(value:string|number|boolean ):unknown{
+
+  if( typeof value === "string"){
+
+    return value;
+  }else if(typeof value === "number"){
+
+    return value;
+  }else if(typeof value === "boolean"){
+
+    return value;
+  }else{
+
+    return (value as unknown);
+
+  }
+
+}
+
+//console.log(run());
+
+
+
+//unknown
+
+function returnValue(value:unknown):unknown{
+
+    return (value as boolean);
+    
+}
+
+console.log(returnValue("shahabuddin"));
